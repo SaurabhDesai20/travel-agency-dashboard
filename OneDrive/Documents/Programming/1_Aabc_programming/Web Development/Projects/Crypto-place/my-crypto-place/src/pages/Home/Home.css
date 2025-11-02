@@ -1,0 +1,167 @@
+.home{
+    padding: 0 10px;
+    padding-bottom: 100px;
+}
+
+.hero{
+    max-width: 600px;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+.hero h1{
+    font-size: mac(4vw, 36px);
+}
+
+.hero p{
+    width: 75%;
+    color: #e3e3e3;
+    line-height: 1.5;
+}
+
+.hero form{
+    padding: 8px;
+    width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero input{
+    flex: 1;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+}
+
+.hero button{
+    border: none;
+    background-color: #7927ff;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero button:hover{
+    background-color: #5a27ad;
+}
+
+.crypto-table{
+    max-width: 800px;
+    margin: auto;
+    background: linear-gradient(rgba(84, 3, 255, 0.15), rgba(105, 2, 153, 0.15));
+    border-radius: 15px;
+    box-shadow: -4px 4px 10px rgb(122, 121, 121);
+}
+
+/* .table-layout{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+    padding: 15px 20px;
+    align-items: center;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+.table-layout:hover{
+    background-color: #fff;
+    color: rgb(27, 45, 88);
+    border-radius: 15px;
+    transition: background-color 0.5s ease-in-out;
+} */
+
+.table-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+    padding: 15px 20px;
+    align-items: center;
+    border-bottom: 1px solid #3c3c3c;
+    position: relative;
+    overflow: hidden; 
+    z-index: 0; 
+}
+
+.table-layout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    /* background-color: #9fd9f6; */
+    background: linear-gradient(rgba(159, 118, 247, 0.15), rgba(130, 88, 150, 0.15));
+    transition: left 0.5s ease-in-out; 
+    z-index: -1;
+}
+
+.table-layout:hover::before {
+    left: 0; 
+}
+
+.table-layout:hover {
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+
+.market-cap{
+    text-align: right;
+}
+
+.table-layout:last-child{
+    border: none;
+}
+
+.table-layout div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-layout div img{
+    width: 35px;
+}
+
+.table-layout .green{
+    color: #00D515;
+    text-align: center;
+}
+
+.table-layout .red{
+    color: #FF4646;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .table-layout{
+        grid-template-columns: 0.5fr 3fr 1fr 1fr;
+    }
+    
+    .market-cap{
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .table-layout div img{
+        width: 25px;
+    }
+    
+    .table-layout{
+        width: 13px;
+    }
+
+    .hero form input{
+        width: 100px;
+    }
+}
